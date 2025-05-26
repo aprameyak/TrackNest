@@ -1,6 +1,9 @@
 package com.example.demo.model;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -17,7 +20,8 @@ public class User {
     private String username;
     private String email;
     @OneToMany(mappedBy="user", cascade=CascadeType.ALL, orphanRemoval=true)
-    private ArrayList<Track> tracks = new ArrayList<Track>();
+    @JsonManagedReference
+    private List<Track> tracks = new ArrayList<Track>();  
 
     public User() {
 
@@ -40,15 +44,25 @@ public class User {
         return email;
     }
 
-    public ArrayList<Track> getTracks() {
+    public List<Track> getTracks() {
         return tracks;
     }
     
     public void addTrack(Track track) {
+        track.setUser(this);
         tracks.add(track);
     }
 
     public void removeTrack(Track track) {
+        track.setUser(null);
         tracks.remove(track);
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
