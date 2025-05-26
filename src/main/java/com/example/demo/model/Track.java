@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,7 +15,7 @@ public class Track {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
+    private String title;
     private String artist;
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -25,13 +26,13 @@ public class Track {
 
     }
 
-    public Track(String name, String artist) {
-        this.name = name;
+    public Track(String title, String artist) {
+        this.title = title;
         this.artist = artist;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     
     }
 
@@ -45,5 +46,13 @@ public class Track {
 
     public void setUser(User user) {
         this.user = user;
+    }   
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
     }   
 }
