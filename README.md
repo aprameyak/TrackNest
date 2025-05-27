@@ -6,6 +6,7 @@
 ![JPA](https://img.shields.io/badge/JPA-Hibernate-59666C?logo=hibernate&logoColor=white&style=for-the-badge)
 ![Maven](https://img.shields.io/badge/Maven-C71A36?logo=apachemaven&logoColor=white&style=for-the-badge)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=white&style=for-the-badge)
+![Render](https://img.shields.io/badge/Deployed%20on-Render-3f3f3f?logo=render&logoColor=white&style=for-the-badge)
 
 ---
 
@@ -33,3 +34,9 @@
 - **ORM**: Hibernate (JPA)  
 - **Build Tool**: Maven  
 - **Testing Tool**: Postman / curl
+
+---
+
+## Live Deployment
+
+Access the public API here [https://tracknest-i73t.onrender.com](https://tracknest-i73t.onrender.com)
